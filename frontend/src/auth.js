@@ -15,7 +15,7 @@ export const register = (password, email) => {
       return response.json();
     }
 
-    return Promise.reject(`${response.status}`);
+    return Promise.reject(`${response}`);
   });
 };
 
