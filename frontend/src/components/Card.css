@@ -1,0 +1,87 @@
+.card {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.card__trash {
+  max-width: 19px;
+  max-height: 19px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: opacity 350ms ease-in-out;
+  cursor: pointer;
+}
+
+.card__trash:hover {
+  opacity: 0.6;
+}
+
+.card__flex-row {
+  padding: 22px 19px 22px 21px;
+  background: #fff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__text {
+  margin: 0;
+  width: 100%;
+  max-width: 185px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.card__like-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3px;
+}
+
+.card__like {
+  background: none;
+  width: 22px;
+  height: 19px;
+  align-self: center;
+  cursor: pointer;
+  transition: opacity 350ms ease-in-out;
+  background-image: url(../images/like.svg);
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.card__like:hover {
+  opacity: 0.5;
+}
+
+.card__like_active {
+  background-image: url(../images/like_black.svg);
+}
+
+.card__like-counter {
+  margin: 0;
+  padding: 0;
+}

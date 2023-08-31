@@ -1,0 +1,11 @@
+.auth {
+  padding-bottom: 80px;
+}
+
+.register__link {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+}
