@@ -9,6 +9,8 @@ const ValidationError = require("../errors/ValidationError");
 const ConflictError = require("../errors/ConflictError");
 const UnauthorizedError = require("../errors/UnauthorizedError");
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 const getUsers = (req, res, next) => UserModel.find()
   .then((users) => res.status(httpConstants.HTTP_STATUS_OK).send(users))
   .catch(() => next(new UnauthorizedError("Server Error")));
@@ -81,7 +83,7 @@ const login = (req, res, next) => {
 
   return UserModel.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, "some-secret-key");
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === "production" ? JWT_SECRET : "dev-secret");
       res.cookie("jwt", token, {
         httpOnly: true,
         maxAge: 3600000 * 24 * 7,
