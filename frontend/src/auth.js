@@ -1,4 +1,4 @@
-export const BASE_URL = "mestosprint15backend.nomoredomainsicu.ru";
+export const BASE_URL = "http://mestosprint15backend.nomoredomainsicu.ru";
 
 export const register = (password, email) => {
   console.log({ password, email });
@@ -10,7 +10,6 @@ export const register = (password, email) => {
     },
     body: JSON.stringify({ password, email }),
   }).then((response) => {
-    console.log(response);
     if (response.ok) {
       return response.json();
     }

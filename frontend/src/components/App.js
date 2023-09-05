@@ -156,7 +156,6 @@ function App() {
   }
 
   function handleLogin(data) {
-    console.log(data);
     authorize(data.password, data.email)
       .then((res) => {
         setLoggedIn(true);

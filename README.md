@@ -10,8 +10,8 @@
 
 ## Ссылки на проект
 
-IP-адрес 84.201.156.101
+[IP] (84.201.156.101)
 
-Frontend mestosprint15.nomoredomainsicu.ru
+[Frontend] (mestosprint15.nomoredomainsicu.ru)
 
-Backend mestosprint15backend.nomoredomainsicu.ru
+[Backend] (mestosprint15backend.nomoredomainsicu.ru)
