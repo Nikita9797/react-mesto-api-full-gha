@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "mestosprint15backend.nomoredomainsicu.ru";
 
 export const register = (password, email) => {
   console.log({ password, email });

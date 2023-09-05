@@ -86,7 +86,7 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: "http://localhost:3000",
+  baseUrl: "mestosprint15backend.nomoredomainsicu.ru",
   headers: {
     "Content-Type": "application/json",
   },

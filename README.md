@@ -12,6 +12,6 @@
 
 IP-адрес 84.201.156.101
 
-Frontend https://test
+Frontend mestosprint15.nomoredomainsicu.ru
 
-Backend https://test
+Backend mestosprint15backend.nomoredomainsicu.ru
