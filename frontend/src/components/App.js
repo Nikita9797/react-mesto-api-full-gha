@@ -15,7 +15,7 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 import { api } from "../utils/Api";
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import ProtectedRouteElement from "./ProtectedRoute";
-import { register, authorize, checkToken, clearCookies } from "../auth.js";
+import { register, authorize, getContent, clearCookies } from "../auth.js";
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] =
@@ -198,17 +198,16 @@ function App() {
   }
 
   const handleTokenCheck = () => {
-    checkToken()
-    .then((res) => {
-      if (res) {
-        setLoggedIn(true);
-        setHeaderEmail(res.email);
-        navigate("/", { replace: true });
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+    if (loggedIn) {
+      getContent()
+      .then((res) => {
+        if (res) {
+          setLoggedIn(true);
+          setHeaderEmail(res.email);
+          navigate("/", { replace: true });
+        }
+      })
+    }
   };
 
   function signOut() {
