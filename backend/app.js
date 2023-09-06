@@ -19,7 +19,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors({ origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3000/users/me", "http://localhost:3001/users/me", "http://mestosprint15backend.nomoredomainsicu.ru", "http://mestosprint15.nomoredomainsicu.ru"], credentials: true }));
+app.use(cors({ origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3000/users/me", "http://localhost:3001/users/me", "https://mestosprint15backend.nomoredomainsicu.ru", "https://mestosprint15.nomoredomainsicu.ru"], credentials: true }));
 
 app.use(cookieParser());
 

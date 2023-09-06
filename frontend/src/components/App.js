@@ -118,7 +118,6 @@ function App() {
   }
 
   function handleUpdateUser(info) {
-    console.log(info);
     api
       .setUserInfo(info.name, info.about)
       .then((res) => {
@@ -179,7 +178,6 @@ function App() {
   }
 
   function handRegister(data) {
-    console.log(data);
     register(data.password, data.email)
       .then(() => {
         setRegisterMessage({

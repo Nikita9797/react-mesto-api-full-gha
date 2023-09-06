@@ -1,7 +1,6 @@
-export const BASE_URL = "http://mestosprint15backend.nomoredomainsicu.ru";
+export const BASE_URL = "https://mestosprint15backend.nomoredomainsicu.ru";
 
 export const register = (password, email) => {
-  console.log({ password, email });
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
