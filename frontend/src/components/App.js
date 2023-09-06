@@ -159,6 +159,7 @@ function App() {
       .then((res) => {
         setLoggedIn(true);
         setHeaderEmail(data.email);
+        localStorage.setItem("loggedIn", true);
         navigate("/", { replace: true });
       })
       .catch((err) => {
@@ -198,7 +199,7 @@ function App() {
   }
 
   const handleTokenCheck = () => {
-    if (loggedIn) {
+    if (localStorage.getItem("loggedIn")) {
       getContent()
       .then((res) => {
         if (res) {
@@ -215,6 +216,7 @@ function App() {
     .then(() => {
       navigate("/sign-in", { replace: true })
       setLoggedIn(false);
+      localStorage.removeItem("loggedIn");
     })
     .catch((err) => {
       console.log(err)
