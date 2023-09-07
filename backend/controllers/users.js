@@ -13,7 +13,7 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 
 const getUsers = (req, res, next) => UserModel.find()
   .then((users) => res.status(httpConstants.HTTP_STATUS_OK).send(users))
-  .catch(() => next(new UnauthorizedError("Server Error")));
+  .catch(next);
 
 const getUserById = (req, res, next) => {
   const { userId } = req.params;
@@ -50,9 +50,6 @@ const createUser = (req, res, next) => {
     email,
   } = req.body;
 
-  if (!req.body.password) {
-    return next(new ValidationError("Пароль отсутствует"));
-  }
   return bcrypt.hash(req.body.password, 10)
     .then((hash) => UserModel.create({
       name,
@@ -90,12 +87,7 @@ const login = (req, res, next) => {
         Domain: "http://localhost:3000",
       }).send({ token });
     })
-    .catch((err) => {
-      if (err instanceof mongoose.Error.ValidationError) {
-        return next(new ValidationError(err.message));
-      }
-      return next(new UnauthorizedError({ message: err.message }));
-    });
+    .catch((err) => next(new UnauthorizedError(err.message)));
 };
 
 const updateProfile = (req, res, next) => {
