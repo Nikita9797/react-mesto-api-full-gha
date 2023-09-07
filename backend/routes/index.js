@@ -35,7 +35,7 @@ router.get("/signout", (req, res) => {
 router.use("/users", auth, usersRouter);
 router.use("/cards", auth, cardsRouter);
 
-router.use("*", auth, (req, res, next) => {
+router.use("*", (req, res, next) => {
   next(new NotFoundError("Invalid request address"));
 });
 
